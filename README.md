@@ -19,9 +19,11 @@ Configuring OpenCV to work with Appium and Katalon Studio is somewhat complicate
 1. `npm uninstall opencv4nodejs`
 1. `export OPENCV4NODEJS_AUTOBUILD_FLAGS=-DBUILD_LIST=core,imgproc,imgcodecs,videoio,highgui,video,calib3d,features2d,objdetect,dnn,ml,flann,photo,stitching,gapi`
 1. `npm install opencv4nodejs`
-1. Link node_modules from NVM directory to /usr/local/lib
-   1. `cd /usr/local/lib`
-   2. `ln -s ~/.nvm/versions/node/v12.22.11/lib/node_modules .`
+1. [Configure Katalon Studio mobile preferences](https://docs.katalon.com/docs/katalon-studio-enterprise/set-up-katalon-studio/preferences/mobile-preferences) to point to the Appium module installed via NVM.
+   1. `Katalon Studio > Preferences > Mobile > Appium Directory`
+   2. `$(HOME)/.nvm/versions/node/v12.22.11/lib/node_modules/appium` (replace `$(HOME)` with your home directory)
+
+![Katalon Studio mobile preferences dialog](mobile-preferences.png)
 
 If you are successful in configuring OpenCV to work with Appium and Katalon Studio, you should see something like the following when you run the 'Visual Tests' test case:
 
