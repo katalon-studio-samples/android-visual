@@ -1,7 +1,27 @@
-# Katalon Studio Samples: Android Mobile Tests
-Katalon Studio is a free and easy-to-use automated functional and regression testing platform. It provides users the ability to implement full automated testing solutions for their application projects with minimal engineering and programming skill requirements.
-______
-The **android-mobile-tests** perform UI functional automation test on an Android application using Katalon Studio. 
+# Katalon Studio Samples: Android Visual Tests
+
+This repository was originally cloned from the standard Android mobile test repository. It is intended specifically to demonstrate the use of image-based keywords that depend on integrating OpenCV with Appium.
+
+## Configuring OpenCV for Appium on macOS 12.4 (Monterrey)
+
+Configuring OpenCV to work with Appium and Katalon Studio is somewhat complicated. The following steps should get it working. They have been tested on an M1 MacBook Pro running macOS 12.4.
+
+1. [Install Homebrew](https://docs.brew.sh/Installation)
+1. [Install NVM](https://tecadmin.net/install-nvm-macos-with-homebrew/)
+1. Install Node 12.22.11 using NVM and activate 12.22.11
+   1. `nvm install 12.22.11`
+   1. `nvm use 12.22.11`
+1. `brew uninstall opencv`
+1. `brew install cmake`
+1. `brew upgrade cmake`
+1. `npm install node-gyp`
+1. `npm uninstall opencv-build`
+1. `npm uninstall opencv4nodejs`
+1. `export OPENCV4NODEJS_AUTOBUILD_FLAGS=-DBUILD_LIST=core,imgproc,imgcodecs,videoio,highgui,video,calib3d,features2d,objdetect,dnn,ml,flann,photo,stitching,gapi`
+1. `npm install opencv4nodejs`
+1. Link node_modules from NVM directory to /usr/local/lib
+   1. `cd /usr/local/lib`
+   2. `ln -s ~/.nvm/versions/node/v12.22.11/lib/node_modules .`
 
 ## Companion products
 
