@@ -23,6 +23,12 @@ Configuring OpenCV to work with Appium and Katalon Studio is somewhat complicate
    1. `cd /usr/local/lib`
    2. `ln -s ~/.nvm/versions/node/v12.22.11/lib/node_modules .`
 
+If you are successful in configuring OpenCV to work with Appium and Katalon Studio, you should see something like the following when you run the 'Visual Tests' test case:
+
+![Screenshow showing Node startup](node_startup.png)
+
+Pay particular attention to the line containing the text "Detected NodeJS location:". It should reference the location of the NodeJS module in NVM.
+
 ## Companion products
 
 ### Katalon TestOps
